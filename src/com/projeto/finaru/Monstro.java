@@ -82,7 +82,7 @@ public abstract class Monstro {
 	public int GetVida() {
 		return vida;
 	}
-	public void SetVida(int v) {
+	public void setVida(int v) {
 		vida = v;
 	}
 	

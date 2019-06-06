@@ -2,30 +2,32 @@ package com.projeto.finaru;
 
 public abstract class Feitico {
 
-	private String frase;
-	private int dano;
-	private String elemento; //enum
+	protected String nome;
+	protected String descricao;
+	protected String frase;
 	
-	public String GetFrase() {
-		return frase;
+	Feitico(String nome, String descricao, String frase){
+		this.nome = nome;
+		this.descricao = descricao;
+		this.frase = frase;
 	}
-	public void SetFrase(String f) {
-		frase = f;
+	public abstract void efeito(Heroi heroi);
+	public String getNome() {
+		return this.nome;
 	}
-	
-	public int GetDano() {
-		return dano;
+	public String getDescricao() {
+		return this.descricao;
 	}
-	public void SetDano(int d) {
-		dano = d;
+	public String getFrase() {
+		return this.frase;
 	}
-	
-	public String GetElemento() {
-		return elemento;
+	public void setNome(String nome) {
+		this.nome= nome;
 	}
-	public void SetElemento(String e) {
-		elemento = e;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	
-	public abstract void Efeito(Heroi heroi);
+	public void setFrase(String frase) {
+		this.frase = frase;
+	}
 }

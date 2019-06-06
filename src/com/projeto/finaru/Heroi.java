@@ -1,138 +1,69 @@
 package com.projeto.finaru;
 
+import java.util.List;
+
 public abstract class Heroi {
-	private int x;
-	private int y;
-	private String nome;
-	private int nivel;
-	private String genero;//enum
-	private String raca; //enum
-	private String classe; //enum
-	private int inteligencia;
-	private int forca;
-	private int sorte;
-	private int destreza;
-	private int defesa;
-	private int vida;
-	private int mana;
+//VARIÁVEIS///////////////////////////////////
+	protected int vidaMax;
+	protected int vidaAtual;
+	protected int forca;
+	public int inteligencia;
+	protected List<Item> listaItem;
+
+//CONSTRUTOR/////////////////////////////////////
+	Heroi(int vidaMax, int forca, int inteligencia) {
+		this.vidaMax = vidaMax;
+		this.forca = forca;
+		this.inteligencia = inteligencia;
+	}
+//FUNÇOES DO JOGO////////////////////////////////
+	private void obterItem(Item i) {//Adiciona um item ao final da lista
+		this.listaItem.add(i);
+	}
+	private void usarItem(Item i) {
+		i.efeito(this);
+		listaItem.remove(i);		
+	}	
+	private void atacar(Monstro m) {
+		m.setVida(m.GetVida()-this.forca);
+	}
+	private void melhorarPoder() {//Level UP simplificado
+		this.vidaMax += 5;
+		this.forca += 1;
+		this.inteligencia += 1;
+	}
+//GETS///////////////////////////////////////////
+	public int getVidaMax() {
+		return this.vidaMax;
+	}
+	public int getVidaAtual() {
+		return this.vidaAtual;
+	}
+	public int getForca() {
+		return this.forca;
+	}
+	public int getInteligencia() {
+		return this.inteligencia;
+	}
+	public List<Item> getListaItem() {
+		return this.listaItem;
+	}
 	
-	//METODOS 
-	
-	public int GetX() {
-		return x;
+//SETS//////////////////////////////////////////
+	public void setVidaMax(int vidaMax) {
+		this.vidaMax = vidaMax;
 	}
-	public void SetX(int n) {
-		x = n;
+	public void setVidaAtual(int vidaAtual) {
+		this.vidaAtual = vidaAtual;
 	}
-	
-	public int GetY() {
-		return y;
+	public void setForca(int forca) {
+		this.forca = forca;
 	}
-	public void SetY(int n) {
-		y = n;
+	public void setInteligencia(int inteligencia) {
+		this.inteligencia = inteligencia;
 	}
-	
-	public String GetNome() {
-		return nome;
-	}
-	public void SetNome(String n) {
-		nome = n;
-	}
-	
-	public int GetNivel() {
-		return nivel;
-	}
-	public void SetNivel(int n) {
-		nivel = n;
-	}
-	
-	public String GetGenero() {
-		return genero;
-	}
-	public void SetGenero(String g) {
-		genero = g;
+	public void setListaItem(List<Item> listaItem) { //SOBRESCREVE TODA A LISTA!!!
+		this.listaItem = listaItem;
 	}
 
-	public String GetRaca() {
-		return raca;
-	}
-	public void SetRaca(String r) {
-		raca = r;
-	}
-
-	public String GetClasse() {
-		return classe;
-	}
-	public void SetClasse(String c) {
-		classe = c;
-	}
-
-	public int GetInteligencia() {
-		return inteligencia;
-	}
-	public void SetInteligencia(int i) {
-		inteligencia = i;
-	}
-
-	public int GetForca() {
-		return forca;
-	}
-	public void SetForca(int f) {
-		forca = f;
-	}
-	
-	public int GetSorte() {
-		return sorte;
-	}
-	public void SetSorte(int s) {
-		sorte = s;
-	}
-	
-	public int GetDestreza() {
-		return destreza;
-	}
-	public void SetDestreza(int d) {
-		destreza = d;
-	}
-	
-	public int GetDefesa() {
-		return defesa;
-	}
-	public void SetDefesa(int d) {
-		defesa = d;
-	}
-	
-	public int GetVida() {
-		return vida;
-	}
-	public void SetVida(int v) {
-		vida = v;
-	}
-	
-	public int GetMana() {
-		return mana;
-	}
-	public void SetMana(int m) {
-		mana = m;
-	}
-	
-	public abstract void levelUp();
-	
-	public abstract int atacar();
-	
-	public abstract void perderVida(int dano);
-	
-	public abstract void fugir(int nivel); 
-	
-	public abstract void usarItem(Item item);
-	
-	public abstract void lancarFeitico(Feitico feitico);
-	
-	public abstract void moverFrente();
-	
-	public abstract void moverTras();
-	
-	public abstract void moverDireita();
-	
-	public abstract void moverEsquerda();
 }
