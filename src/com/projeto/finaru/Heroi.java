@@ -25,7 +25,7 @@ public abstract class Heroi {
 		listaItem.remove(i);		
 	}	
 	private void atacar(Monstro m) {
-		m.setVida(m.GetVida()-this.forca);
+		m.setVida(m.getVida()-this.forca);
 	}
 	private void melhorarPoder() {//Level UP simplificado
 		this.vidaMax += 5;

@@ -1,32 +1,48 @@
 package com.projeto.finaru;
 
 public abstract class Sala {
-	private int x;
-	private int y;
-	private boolean clear;
+//VARIÁVEIS///////////////////////////////////////
+	private boolean paraDireita;
+	private boolean paraEsquerda;
+	private boolean paraCima;
+	private boolean paraBaixo;
+
+//MÉTODOS//////////////////////////////////////////
+protected  void entrada() {
 	
-	public int GetX() {
-		return x;
-	}
-	public void SetX(int n) {
-		x = n;
-	}
+}
+
+protected void permanencia() {
 	
-	public int GetY() {
-		return y;
-	}
-	public void SetY(int n) {
-		y = n;
-	}
+}
+
+protected void saida() {
 	
-	public boolean getClear() {
-		return clear;
+}
+//GETS/////////////////////////////////////////////
+	public boolean getParaDireita() {
+		return this.paraDireita;
 	}
-	public void setClear(boolean n) {
-		clear = n;
+	public boolean getParaEsquerda() {
+		return this.paraEsquerda;
 	}
-	
-	public abstract void checarSaidas(Heroi heroi);
-		
-	
+	public boolean getParaCima() {
+		return this.paraCima;
+	}
+	public boolean getParaBaixo() {
+		return this.paraBaixo;
+	}
+//SETS/////////////////////////////////////////////////////
+	public void setParaDireita(boolean paraDireita) {
+		this.paraDireita = paraDireita;
+	}
+	public void setParaEsquerda(boolean paraEsquerda) {
+		this.paraEsquerda = paraEsquerda;
+	}
+	public void setParaCima(boolean paraCima) {
+		this.paraCima = paraCima;
+	}
+	public void setParaBaixo(boolean paraBaixo) {
+		this.paraBaixo = paraBaixo;
+	}
 }

@@ -1,99 +1,44 @@
 package com.projeto.finaru;
 
+import java.util.List;
+
 public abstract class Monstro {
-
-	private int x;
-	private int y;
+//VARIÁVEIS///////////////////////////////////////////////////////
 	private String nome;
-	private String elemento; //enum
-	private int nivel;
-	private String raca; //enum
-	private int forca;
-	private int sorte;
-	private int defesa;
 	private int vida;
-	
-	
-	//METODOS 
-	
-	public int GetX() {
-		return x;
+	private int ataque;
+	private List<Item> lista_item;
+//CONSTRUTOR///////////////////////////////////////////////////////	
+	Monstro(String nome, int vida, int ataque, List<Item> lista_item){
+		this.nome = nome;
+		this.vida = vida;
+		this.ataque = ataque;
+		this.lista_item = lista_item;
 	}
-	public void SetX(int n) {
-		x = n;
+//GETS////////////////////////////////////////////////////////////
+	public String getNome() {
+		return this.nome;
 	}
-	
-	public int GetY() {
-		return y;
+	public int getVida() {
+		return this.vida;
 	}
-	public void SetY(int n) {
-		y = n;
+	public int getAtaque() {
+		return this.ataque;
 	}
-	
-	public String GetNome() {
-		return nome;
+	public List<Item> getListaItem() {
+		return this.lista_item;
 	}
-	public void SetNome(String n) {
-		nome = n;
+//SETS//////////////////////////////////////////////////////////////
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	public String GetElemento() {
-		return elemento;
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
-	public void SetElemento(String e) {
-		elemento = e;
+	public void setAtaque(int ataque) {
+		this.ataque = ataque;
 	}
-	
-	public int GetNivel() {
-		return nivel;
+	public void setListaItem(List<Item> lista_item) {
+		this.lista_item = lista_item;
 	}
-	public void SetNivel(int n) {
-		nivel = n;
-	}
-	
-	public String GetRaca() {
-		return raca;
-	}
-	public void SetRaca(String r) {
-		raca = r;
-	}
-
-	public int GetForca() {
-		return forca;
-	}
-	public void SetForca(int f) {
-		forca = f;
-	}
-	
-	public int GetSorte() {
-		return sorte;
-	}
-	public void SetSorte(int s) {
-		sorte = s;
-	}
-
-	public int GetDefesa() {
-		return defesa;
-	}
-	public void SetDefesa(int d) {
-		defesa = d;
-	}
-	
-	public int GetVida() {
-		return vida;
-	}
-	public void setVida(int v) {
-		vida = v;
-	}
-	
-	public abstract void levelUp();
-	
-	public abstract int atacar();
-	
-	public abstract void receberAtaque(int dano);
-	
-	public abstract void receberFeitico(Feitico feitico);
-	
-	
-
 }
