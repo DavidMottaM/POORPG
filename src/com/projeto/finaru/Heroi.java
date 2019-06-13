@@ -6,6 +6,7 @@ public abstract class Heroi {
 //VARIÁVEIS///////////////////////////////////
 	protected int x;
 	protected int y;
+	protected String nome;
 	protected int level;
 	protected int vidaMax;
 	protected int vidaAtual;
@@ -14,10 +15,12 @@ public abstract class Heroi {
 	protected List<Item> listaItem;
 
 //CONSTRUTOR/////////////////////////////////////
-	Heroi(int vidaMax, int forca, int inteligencia) {
+	protected Heroi(String nome,int vidaMax, int forca, int inteligencia) {
+		this.nome = nome;
 		this.vidaMax = vidaMax;
 		this.forca = forca;
 		this.inteligencia = inteligencia;
+		this.level = 0;
 	}
 //FUNÇOES DO JOGO////////////////////////////////
 	private void obterItem(Item i) {//Adiciona um item ao final da lista
@@ -27,9 +30,9 @@ public abstract class Heroi {
 		i.efeito(this);
 		listaItem.remove(i);		
 	}	
-	private void atacar(Monstro m) {
-		m.setVida(m.getVida()-this.forca+this.level);
-	}
+	public abstract void atacar(Monstro m);
+		
+	
 	private void melhorarPoder() {//Level UP simplificado
 		this.vidaMax += 5;
 		this.forca += 1;
@@ -41,6 +44,9 @@ public abstract class Heroi {
 	}
 	public int getY() {
 		return this.y;
+	}
+	public String getNome() {
+		return this.nome;
 	}
 	public int getLevel() {
 		return this.x;

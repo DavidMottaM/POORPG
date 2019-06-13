@@ -1,6 +1,6 @@
 package com.projeto.finaru;
 
-public abstract class Sala {
+public class Sala {
 //VARIÁVEIS///////////////////////////////////////
 	private boolean paraDireita;
 	private boolean paraEsquerda;
@@ -9,7 +9,7 @@ public abstract class Sala {
 	public Monstro monstros[];
 	public boolean visitada;
 //CONSTRUTOR/////////////////////////////////////
-	Sala() {
+	public Sala() {
 		visitada = false;
 	}
 //MÉTODOS//////////////////////////////////////////
