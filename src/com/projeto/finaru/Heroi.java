@@ -4,6 +4,9 @@ import java.util.List;
 
 public abstract class Heroi {
 //VARIÁVEIS///////////////////////////////////
+	protected int x;
+	protected int y;
+	protected int level;
 	protected int vidaMax;
 	protected int vidaAtual;
 	protected int forca;
@@ -25,7 +28,7 @@ public abstract class Heroi {
 		listaItem.remove(i);		
 	}	
 	private void atacar(Monstro m) {
-		m.setVida(m.getVida()-this.forca);
+		m.setVida(m.getVida()-this.forca+this.level);
 	}
 	private void melhorarPoder() {//Level UP simplificado
 		this.vidaMax += 5;
@@ -33,6 +36,15 @@ public abstract class Heroi {
 		this.inteligencia += 1;
 	}
 //GETS///////////////////////////////////////////
+	public int getX() {
+		return this.x;
+	}
+	public int getY() {
+		return this.y;
+	}
+	public int getLevel() {
+		return this.x;
+	}
 	public int getVidaMax() {
 		return this.vidaMax;
 	}
@@ -50,6 +62,15 @@ public abstract class Heroi {
 	}
 	
 //SETS//////////////////////////////////////////
+	public void setX (int x) {
+		this.x = x;
+	}
+	public void setY (int y) {
+		this.y = y;
+	}
+	public void setLevel (int level) {
+		this.level = level;
+	}
 	public void setVidaMax(int vidaMax) {
 		this.vidaMax = vidaMax;
 	}

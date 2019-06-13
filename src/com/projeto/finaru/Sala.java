@@ -6,19 +6,30 @@ public abstract class Sala {
 	private boolean paraEsquerda;
 	private boolean paraCima;
 	private boolean paraBaixo;
-
+	public Monstro monstros[];
+	public boolean visitada;
+//CONSTRUTOR/////////////////////////////////////
+	Sala() {
+		visitada = false;
+	}
 //MÉTODOS//////////////////////////////////////////
-protected  void entrada() {
+	protected  void entrada() {
+		
+	}
 	
-}
-
-protected void permanencia() {
+	protected void permanencia() {
+		
+	}
 	
-}
-
-protected void saida() {
+	protected void saida() {
+		
+	}
 	
-}
+	
+	public boolean temMonstro() {
+		return (monstros.length > 0) ? true : false; 
+		
+	}
 //GETS/////////////////////////////////////////////
 	public boolean getParaDireita() {
 		return this.paraDireita;
