@@ -49,6 +49,8 @@ public class Sistema {
 		while(escolhido == false) {
 	
 			for (int i = 0; i < this.personagens.size(); i++) {
+				System.out.println("# SELEÇÃO DE PERSONAGEM #");
+				System.out.println(" ");
 				System.out.println(i + " - " + personagens.get(i).getNome());
 			}
 			
@@ -85,6 +87,8 @@ public class Sistema {
 			}
 			
 			for (int i = 0; i < this.dungeons.size(); i++) {
+				System.out.println("# SELEÇÃO DE MASMORRA #");
+				System.out.println(" ");
 				System.out.println(i + " - " + dungeons.get(i).getNome());
 			}
 			

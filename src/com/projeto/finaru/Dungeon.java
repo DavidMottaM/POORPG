@@ -1,6 +1,8 @@
 package com.projeto.finaru;
 
 import java.util.Random;
+
+import com.projeto.finaru.monstros.Goblin;
 public class Dungeon {
 
 	Sala[][] salas = new Sala[4][4];
@@ -20,6 +22,12 @@ public class Dungeon {
 			for (int j = 0; j < salas[0].length; j++) {
 				
 				salas[i][j] = new Sala();
+				int temMonstro = gerador.nextInt(100);
+				int temItem = gerador.nextInt(100);
+				
+				if (temMonstro <= 50) {
+					salas[i][j].monstros.add(new Goblin());
+				}
 			}
 		}
 		

@@ -1,12 +1,15 @@
 package com.projeto.finaru;
 
+import java.util.ArrayList;
+
 public class Sala {
 //VARIÁVEIS///////////////////////////////////////
 	private boolean paraDireita;
 	private boolean paraEsquerda;
 	private boolean paraCima;
 	private boolean paraBaixo;
-	public Monstro monstros[];
+	public ArrayList<Monstro> monstros;
+	public ArrayList<Item> itens;
 	public boolean visitada;
 //CONSTRUTOR/////////////////////////////////////
 	public Sala() {
