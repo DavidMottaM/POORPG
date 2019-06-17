@@ -29,7 +29,7 @@ public class Main {
 			if (opcao == 1) {
 				
 				System.out.println("-Voce escolheu a opcao 1");
-				sistema.criarPerosonagem();
+				sistema.criarPersonagem();
 			}
 			
 			if (opcao == 2) {

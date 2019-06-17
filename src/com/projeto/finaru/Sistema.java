@@ -16,7 +16,7 @@ public class Sistema {
 		dungeons = new ArrayList<Dungeon>();
 	}
 	
-	public void criarPerosonagem() {
+	public void criarPersonagem() {
 		String nome = "";
 		System.out.println("# CRIAÇÃO DE PERSONAGEM #");
 		
@@ -57,7 +57,7 @@ public class Sistema {
 			resposta =  Integer.parseInt(leitor.nextLine());
 			
 			if(resposta == this.personagens.size())
-				this.criarPerosonagem();
+				this.criarPersonagem();
 			else {
 				escolhido = true;
 				
