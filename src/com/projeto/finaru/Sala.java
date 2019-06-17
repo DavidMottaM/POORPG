@@ -6,14 +6,27 @@ public class Sala {
 	private boolean paraEsquerda;
 	private boolean paraCima;
 	private boolean paraBaixo;
+	private int x;
+	private int y;
 	public Monstro monstros[];
 	public boolean visitada;
+	private String textoEntrada = "";
+	
 //CONSTRUTOR/////////////////////////////////////
-	public Sala() {
+	public Sala(boolean paraDireita, boolean paraEsqueda, boolean paraCima, boolean paraBaixo, int x, int y, String t) {
+		this.paraDireita = paraDireita;
+		this.paraEsquerda = paraEsqueda;
+		this.paraCima = paraCima;
+		this.paraBaixo = paraBaixo;
+		this.x = x;
+		this.y = y;
 		visitada = false;
+		this.textoEntrada = t;
 	}
 //MÉTODOS//////////////////////////////////////////
 	protected  void entrada() {
+		System.out.println(textoEntrada);
+		System.out.println("///////////////////////////// MENU /////////////////////////////");
 		
 	}
 	
@@ -22,6 +35,25 @@ public class Sala {
 	}
 	
 	protected void saida() {
+		
+	}
+	
+	public void mostrarOpcoes() {
+		if(this.paraCima == true) {
+			System.out.println("1 - Ir para cima");
+		}
+		
+		if(this.paraBaixo == true) {
+			System.out.println("2 - Ir para baixo");
+		}
+		
+		if(this.paraEsquerda == true) {
+			System.out.println("3 - Ir para esquerda");
+		}
+		
+		if(this.paraDireita == true) {
+			System.out.println("4 - Ir para direita");
+		}
 		
 	}
 	

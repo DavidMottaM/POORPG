@@ -15,13 +15,13 @@ public class Dungeon {
 		gerador = new Random();
 		this.nome = "Masmorra de " + nomes1[gerador.nextInt(6)] +" "+ nomes2[gerador.nextInt(6)];
 		
-		for (int i = 0; i < salas[0].length; i++) {
-			
-			for (int j = 0; j < salas[0].length; j++) {
-				
-				salas[i][j] = new Sala();
-			}
-		}
+//		for (int i = 0; i < salas[0].length; i++) {
+//			
+//			for (int j = 0; j < salas[0].length; j++) {
+//				
+//				salas[i][j] = new Sala();
+//			}
+//		}
 		
 	}
 	
