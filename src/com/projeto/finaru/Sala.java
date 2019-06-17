@@ -1,24 +1,35 @@
 package com.projeto.finaru;
 
-public abstract class Sala {
+public class Sala {
 //VARIÁVEIS///////////////////////////////////////
 	private boolean paraDireita;
 	private boolean paraEsquerda;
 	private boolean paraCima;
 	private boolean paraBaixo;
-
+	public Monstro monstros[];
+	public boolean visitada;
+//CONSTRUTOR/////////////////////////////////////
+	public Sala() {
+		visitada = false;
+	}
 //MÉTODOS//////////////////////////////////////////
-protected  void entrada() {
+	protected  void entrada() {
+		
+	}
 	
-}
-
-protected void permanencia() {
+	protected void permanencia() {
+		
+	}
 	
-}
-
-protected void saida() {
+	protected void saida() {
+		
+	}
 	
-}
+	
+	public boolean temMonstro() {
+		return (monstros.length > 0) ? true : false; 
+		
+	}
 //GETS/////////////////////////////////////////////
 	public boolean getParaDireita() {
 		return this.paraDireita;

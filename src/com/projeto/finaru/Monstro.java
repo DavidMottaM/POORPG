@@ -4,23 +4,35 @@ import java.util.List;
 
 public abstract class Monstro {
 //VARIÁVEIS///////////////////////////////////////////////////////
-	private String nome;
-	private int vida;
-	private int ataque;
-	private List<Item> lista_item;
+	protected String nome;
+	protected int level;
+	protected int vida;
+	protected int ataque;
+	protected List<Item> lista_item;
 //CONSTRUTOR///////////////////////////////////////////////////////	
-	Monstro(String nome, int vida, int ataque, List<Item> lista_item){
+	protected Monstro(String nome, int vida, int ataque, List<Item> lista_item){
 		this.nome = nome;
 		this.vida = vida;
 		this.ataque = ataque;
 		this.lista_item = lista_item;
 	}
+//METODOS////////////////////////////////////////////////////////////
+	public abstract void atacar(Heroi heroi);
+		
+	
+	public void darLoot(Heroi heroi) {
+		
+	}
+		
 //GETS////////////////////////////////////////////////////////////
 	public String getNome() {
 		return this.nome;
 	}
 	public int getVida() {
 		return this.vida;
+	}
+	public int getLevel() {
+		return this.level;
 	}
 	public int getAtaque() {
 		return this.ataque;
@@ -34,6 +46,9 @@ public abstract class Monstro {
 	}
 	public void setVida(int vida) {
 		this.vida = vida;
+	}
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
