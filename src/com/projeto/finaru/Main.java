@@ -139,7 +139,10 @@ public class Main {
 							atualX = antigoX;
 							atualY = antigoY;
 						}
-						masmorraAtual.entrada();
+
+						
+						masmorraAtual = masmorra[atualX][atualY];
+						masmorraAtual.entrada(personagem);
 					}
 					
 				}

@@ -1,14 +1,20 @@
 package com.projeto.finaru;
 
+import java.util.ArrayList;
+
 public class Sala {
 //VARIÁVEIS///////////////////////////////////////
 	private boolean paraDireita;
 	private boolean paraEsquerda;
 	private boolean paraCima;
 	private boolean paraBaixo;
+
+	public ArrayList<Monstro> monstros;
+	public ArrayList<Item> itens;
+
 	private int x;
 	private int y;
-	public Monstro monstros[];
+	//public Monstro monstros[];
 	public boolean visitada;
 	private String textoEntrada = "";
 	
@@ -24,10 +30,23 @@ public class Sala {
 		this.textoEntrada = t;
 	}
 //MÉTODOS//////////////////////////////////////////
-	protected  void entrada() {
+	protected  void entrada(Heroi heroi) {
 		System.out.println(textoEntrada);
-		System.out.println("///////////////////////////// MENU /////////////////////////////");
+		//System.out.println("///////////////////////////// MENU /////////////////////////////");
 		
+		if (itens.size() > 0) {
+			System.out.println("Voce achou um item!");
+			System.out.println(itens.get(0).getNome() + " foi adicionado no seu inventario...");
+			heroi.listaItem.add(itens.get(0));
+			
+		}
+		
+		if (monstros.size() > 0) {
+			System.out.println("Um Monstro aparece!");
+			System.out.println("Goblin de nível " + monstros.get(0).getLevel());
+			this.batalha(heroi, monstros.get(0));
+			
+		}
 	}
 	
 	protected void permanencia() {
@@ -61,7 +80,11 @@ public class Sala {
 	
 	
 	public boolean temMonstro() {
-		return (monstros.length > 0) ? true : false; 
+		return (monstros.size() > 0) ? true : false; 
+		
+	}
+	
+	public void batalha(Heroi heroi, Monstro monstro) {
 		
 	}
 //GETS/////////////////////////////////////////////
