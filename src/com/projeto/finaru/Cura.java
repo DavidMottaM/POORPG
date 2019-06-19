@@ -7,9 +7,11 @@ public class Cura extends Feitico {
 	}
 
 	@Override
-	public void efeito(Heroi heroi) {
-		
+	public void efeito(Monstro m) {
+		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }

@@ -17,19 +17,29 @@ public class Dungeon {
 		gerador = new Random();
 		this.nome = "Masmorra de " + nomes1[gerador.nextInt(6)] +" "+ nomes2[gerador.nextInt(6)];
 		
+
 		for (int i = 0; i < salas[0].length; i++) {
 			
 			for (int j = 0; j < salas[0].length; j++) {
 				
-				salas[i][j] = new Sala();
+				//salas[i][j] = new Sala();
 				int temMonstro = gerador.nextInt(100);
 				int temItem = gerador.nextInt(100);
 				
 				if (temMonstro <= 50) {
-					salas[i][j].monstros.add(new Goblin());
+					//salas[i][j].monstros.add(new Goblin());
 				}
 			}
 		}
+
+//		for (int i = 0; i < salas[0].length; i++) {
+//			
+//			for (int j = 0; j < salas[0].length; j++) {
+//				
+//				salas[i][j] = new Sala();
+//			}
+//		}
+
 		
 	}
 	

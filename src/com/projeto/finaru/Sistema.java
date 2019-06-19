@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.projeto.finaru.herois.Guerreiro;
+import com.projeto.finaru.herois.Ladino;
+import com.projeto.finaru.herois.Mago;
 
 public class Sistema {
 	public ArrayList<Heroi> personagens;
@@ -16,7 +18,7 @@ public class Sistema {
 		dungeons = new ArrayList<Dungeon>();
 	}
 	
-	public void criarPerosonagem() {
+	public void criarPersonagem() {
 		String nome = "";
 		System.out.println("# CRIAÇÃO DE PERSONAGEM #");
 		
@@ -34,9 +36,19 @@ public class Sistema {
 		int classe = Integer.parseInt(leitor.nextLine());
 		
 		if(classe == 1) {
-			Heroi heroi = new Guerreiro(nome,50,10,0);
+			Heroi heroi = new Guerreiro(nome,50,10,1);
 			personagens.add(heroi);
-			System.out.println("Personagem Criado!");
+			System.out.println("Guerreiro criado!");
+			System.out.println(" ");
+		}else if(classe == 2) {
+			Heroi heroi = new Mago(nome,20,5,12);
+			personagens.add(heroi);
+			System.out.println("Mago criado!");
+			System.out.println(" ");
+		}else if(classe == 3) {
+			Heroi heroi = new Ladino(nome,30,12,2);
+			personagens.add(heroi);
+			System.out.println("Ladino criado!");
 			System.out.println(" ");
 		}	
 	}
@@ -59,7 +71,7 @@ public class Sistema {
 			resposta =  Integer.parseInt(leitor.nextLine());
 			
 			if(resposta == this.personagens.size())
-				this.criarPerosonagem();
+				this.criarPersonagem();
 			else {
 				escolhido = true;
 				

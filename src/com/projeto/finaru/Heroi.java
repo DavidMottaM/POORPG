@@ -28,16 +28,13 @@ public abstract class Heroi {
 	}
 	private void usarItem(Item i) {
 		i.efeito(this);
-		listaItem.remove(i);		
+		listaItem.remove(i);//deleta o PRIMEIRO item da lista que possui o mesmo nome do parametro		
 	}	
-	public abstract void atacar(Monstro m);
-		
-	
-	private void melhorarPoder() {//Level UP simplificado
-		this.vidaMax += 5;
-		this.forca += 1;
-		this.inteligencia += 1;
+
+	private void atacar(Monstro m) {
+		m.setVida(m.getVida()-this.forca);
 	}
+	public abstract void melhorarPoder();//LevelUp simplificado
 //GETS///////////////////////////////////////////
 	public int getX() {
 		return this.x;
