@@ -16,6 +16,10 @@ public class Main {
 		int atualX = 0;
 		int atualY = 0;
 		
+		int antigoX = 0;
+		int antigoY = 0;
+		
+		
 		/////Criando mapa////////////////////////////////////////////////////////////////
 		//boolean paraDireta, boolean paraEsqueda, boolean paraCima, boolean paraBaixo, int x, int y)
 		Sala a = new Sala(false, false, true, false, 0, 0, "Você entra na masmorra em busca de novas aventuras");
@@ -34,6 +38,7 @@ public class Main {
 		Sala n = new Sala(false, true, false, false, 3, 0,"Uma fonte de águas cristalinas parece um bom lugar para descansar");
 		
 		Sala [] [] masmorra = new Sala [4][4];
+		
 		masmorra[0][0] = a;
 		masmorra[0][1] = b;
 		masmorra[1][1] = c;
@@ -100,15 +105,14 @@ public class Main {
 				if (resposta == 1) {
 					System.out.println("iniciar");
 					
-					///////////O jogo acontece aqui bebê//////////////////////////////////
+					///////////Gameloop --> O jogo ocorre Aqui//////////////////////////////////
 					while(true) {
 						
 						masmorraAtual.mostrarOpcoes();
 						
 						opcaoDirecao = Integer.parseInt(leitor.nextLine());
-						
+
 						switch(opcaoDirecao) {
-						
 							case 1:
 								atualY++;
 							break;
@@ -121,9 +125,20 @@ public class Main {
 							case 4:
 								atualX++;
 							break;
+							default:
+								System.out.println("Opção Invalida");
+							
 						}
-						
-						masmorraAtual = masmorra[atualX][atualY];
+						if(masmorra[atualX][atualY] != null) {
+							masmorraAtual = masmorra[atualX][atualY];
+							antigoX = atualX;
+							antigoY = atualY;
+						}
+						else {
+							System.out.println("Opção Invalida");
+							atualX = antigoX;
+							atualY = antigoY;
+						}
 						masmorraAtual.entrada();
 					}
 					

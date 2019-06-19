@@ -31,7 +31,7 @@ public abstract class Heroi {
 		listaItem.remove(i);//deleta o PRIMEIRO item da lista que possui o mesmo nome do parametro		
 	}	
 
-	private void atacar(Monstro m) {
+	protected void atacar(Monstro m) {
 		m.setVida(m.getVida()-this.forca);
 	}
 	public abstract void melhorarPoder();//LevelUp simplificado

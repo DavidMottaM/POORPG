@@ -41,17 +41,19 @@ public class Sala {
 	public void mostrarOpcoes() {
 		if(this.paraCima == true) {
 			System.out.println("1 - Ir para cima");
+		} else {
+			System.out.println("Opção invalida");
 		}
 		
-		if(this.paraBaixo == true) {
+		if(this.paraBaixo) {
 			System.out.println("2 - Ir para baixo");
 		}
 		
-		if(this.paraEsquerda == true) {
+		if(this.paraEsquerda) {
 			System.out.println("3 - Ir para esquerda");
 		}
 		
-		if(this.paraDireita == true) {
+		if(this.paraDireita) {
 			System.out.println("4 - Ir para direita");
 		}
 		

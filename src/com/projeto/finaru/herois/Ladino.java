@@ -19,7 +19,8 @@ public class Ladino extends Heroi{
 	}
 	
 	//para professora: a gente quer fazer uma sobrecarga
-	private void atacar(Monstro m) {
+	@Override
+	protected void atacar(Monstro m) {
 		this.forca++;
 		m.setVida(m.getVida()-this.forca);
 	}
