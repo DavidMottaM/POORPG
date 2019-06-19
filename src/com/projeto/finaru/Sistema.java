@@ -18,7 +18,7 @@ public class Sistema {
 		dungeons = new ArrayList<Dungeon>();
 	}
 	
-	public void criarPersonagem() {
+	public void criarPersonagem() throws OpcaoInexistenteException {
 		String nome = "";
 		System.out.println("# CRIAÇÃO DE PERSONAGEM #");
 		
@@ -50,10 +50,12 @@ public class Sistema {
 			personagens.add(heroi);
 			System.out.println("Ladino criado!");
 			System.out.println(" ");
+		}else {
+			throw new OpcaoInexistenteException("Selecione uma opção existente");
 		}	
 	}
 	
-	public Heroi escolherPersonagem() {
+	public Heroi escolherPersonagem() throws OpcaoInexistenteException {
 		
 		boolean escolhido = false;
 		int resposta = 0;
@@ -92,7 +94,7 @@ public class Sistema {
 		while(escolhido == false) {
 		
 			if(dungeons.size() == 0) {
-				System.out.println("- Procurando Masmorra Mais Proxima...");
+				System.out.println("- Procurando masmorra mais próxima...");
 				System.out.println(" ");
 				Dungeon dungeon = new Dungeon();
 				dungeons.add(dungeon);
@@ -104,12 +106,12 @@ public class Sistema {
 				System.out.println(i + " - " + dungeons.get(i).getNome());
 			}
 			
-			System.out.println(this.dungeons.size() + " - " + "Procurar mais Masmorras?");
+			System.out.println(this.dungeons.size() + " - " + "Procurar mais masmorras?");
 			
 			resposta =  Integer.parseInt(leitor.nextLine());
 			
 			if(resposta >= this.dungeons.size()){
-				System.out.println("- Procurando Mais Masmorras...");
+				System.out.println("- Procurando mais masmorras...");
 				Dungeon dungeon = new Dungeon();
 				dungeons.add(dungeon);
 			}

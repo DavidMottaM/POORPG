@@ -3,7 +3,7 @@ package com.projeto.finaru;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws OpcaoInexistenteException {
 		Sistema sistema = new Sistema();
 		Scanner leitor = new Scanner(System.in);
 		int opcao = 0;
@@ -18,20 +18,20 @@ public class Main {
 		
 		/////Criando mapa////////////////////////////////////////////////////////////////
 		//boolean paraDireta, boolean paraEsqueda, boolean paraCima, boolean paraBaixo, int x, int y)
-		Sala a = new Sala(false, false, true, false, 0, 0, "você entra na masmorra em busca de novas aventuras");
+		Sala a = new Sala(false, false, true, false, 0, 0, "Você entra na masmorra em busca de novas aventuras");
 		Sala b = new Sala(true, false, false, true, 0, 1, "Você percebe alguns esqueletos no chão");
-		Sala c = new Sala(false, true, true, true, 1, 1, "uma armadilha foi acionada, mas você conseguiu escapar ileso");
-		Sala d = new Sala(true, false, false, true, 1, 2,"Os ratos correm pelo chão. Esta cada vez mais dificil Enxergar em meio a escuridão ");
+		Sala c = new Sala(false, true, true, true, 1, 1, "Uma armadilha foi acionada, mas você conseguiu escapar ileso");
+		Sala d = new Sala(true, false, false, true, 1, 2,"Os ratos correm pelo chão. Está cada vez mais dificil enxergar em meio a escuridão ");
 		Sala e = new Sala(true, true, false, false, 2, 2, "As sombras parecem cada vez mais assustadoras");
 		Sala f = new Sala(false, true, true, true, 3, 2, "Com coragem, você abre a porta, e mais uma sala está vazia");
-		Sala g = new Sala(false, true, false, true, 3, 3,"Você encontra um baú com Poções");
-		Sala h = new Sala(true, true, false, false, 2, 3,"Você ja não consegue mais ouvir os sons da floresta");
+		Sala g = new Sala(false, true, false, true, 3, 3,"Você encontra um baú com poções");
+		Sala h = new Sala(true, true, false, false, 2, 3,"Você já não consegue mais ouvir os sons da floresta");
 		Sala i = new Sala(true, true, false, false, 1, 3,"Você escuta sons de correntes");
 		Sala j = new Sala(true, false, false, false, 0, 3,"Nada aqui");
-		Sala k = new Sala(false, false, true, false, 3, 1,"mais um lugar silencioso");
-		Sala l = new Sala(true, false, true, false, 1, 0,"Ei! você quer comprar alguns tesouros? diz um comerciante");
+		Sala k = new Sala(false, false, true, false, 3, 1,"Mais um lugar silencioso");
+		Sala l = new Sala(true, false, true, false, 1, 0,"Ei! Você quer comprar alguns tesouros? Diz um comerciante");
 		Sala m = new Sala(true, true, false, false, 2, 0,"Goblins pulam em você, não deixe eles te derrotarem!");
-		Sala n = new Sala(false, true, false, false, 3, 0,"uma fonte de aguas cristalinas parece um bom lugar para descansar");
+		Sala n = new Sala(false, true, false, false, 3, 0,"Uma fonte de águas cristalinas parece um bom lugar para descansar");
 		
 		Sala [] [] masmorra = new Sala [4][4];
 		masmorra[0][0] = a;
