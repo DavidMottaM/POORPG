@@ -23,6 +23,7 @@ public abstract class Heroi {
 		this.inteligencia = inteligencia;
 		this.level = 0;
 		this.listaItem = listaItem;
+		this.vidaAtual = vidaMax;
 	}
 //FUNÇOES DO JOGO////////////////////////////////
 	private void obterItem(Item i) {//Adiciona um item ao final da lista

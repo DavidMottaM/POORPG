@@ -23,6 +23,9 @@ public class GoblinTest {
 		
 		//Verificar se o ataque é positivo
 		assertTrue(goblin.getAtaque() > 0);
+		
+		goblin.atacar(g);
+		assertEquals(g.getVidaAtual(), 1);
 	}
 
 }
