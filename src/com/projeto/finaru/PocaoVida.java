@@ -2,7 +2,7 @@ package com.projeto.finaru;
 
 public class PocaoVida extends Item {
 
-	PocaoVida(String nome, String descricao) {
+	public PocaoVida(String nome, String descricao) {
 		super(nome, descricao);
 	}
 

@@ -5,8 +5,8 @@ import com.projeto.finaru.*;
 
 public class Goblin extends Monstro {
 
-	Goblin(String nome, int vida, int ataque, List<Item> lista_item) {
-		super(nome, vida, ataque, lista_item);
+	public Goblin(String nome, int vida, int ataque) {
+		super(nome, vida, ataque);
 		// TODO Auto-generated constructor stub
 		
 	}

@@ -10,11 +10,11 @@ public abstract class Monstro {
 	protected int ataque;
 	protected List<Item> lista_item;
 //CONSTRUTOR///////////////////////////////////////////////////////	
-	protected Monstro(String nome, int vida, int ataque, List<Item> lista_item){
+	protected Monstro(String nome, int vida, int ataque){
 		this.nome = nome;
 		this.vida = vida;
 		this.ataque = ataque;
-		this.lista_item = lista_item;
+	//	this.lista_item = lista_item;
 	}
 //METODOS////////////////////////////////////////////////////////////
 	public abstract void atacar(Heroi heroi);
