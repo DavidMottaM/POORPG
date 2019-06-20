@@ -7,7 +7,7 @@ public class Relampago extends Feitico {
 	}
 
 	@Override
-	public void efeito(Monstro m) {
+	public void efeito(Heroi h,Monstro m) {
 		m.setVida(m.getVida() - 7);
 	}
 

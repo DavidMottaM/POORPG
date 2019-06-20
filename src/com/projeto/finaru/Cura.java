@@ -2,14 +2,14 @@ package com.projeto.finaru;
 
 public class Cura extends Feitico {
 
-	Cura(String nome, String descricao, String frase) {
+	public Cura(String nome, String descricao, String frase) {
 		super(nome, descricao, frase);
 	}
 
 	@Override
-	public void efeito(Monstro m) {
+	public void efeito(Heroi h, Monstro m) {
 		// TODO Auto-generated method stub
-		
+		h.setVidaAtual(h.getVidaAtual()+h.getInteligencia());
 	}
 
 
