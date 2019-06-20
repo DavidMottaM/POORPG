@@ -17,7 +17,7 @@ public abstract class Heroi {
 	public List<Feitico> lista_feitico;
 
 //CONSTRUTOR/////////////////////////////////////
-	protected Heroi(String nome,int vidaMax, int forca, int inteligencia) {
+	protected Heroi(String nome,int vidaMax, int forca, int inteligencia, List<Item> listaItem) {
 		this.nome = nome;
 		this.vidaMax = vidaMax;
 		this.forca = forca;
@@ -25,17 +25,18 @@ public abstract class Heroi {
 		this.level = 0;
 		this.lista_feitico = new ArrayList<Feitico>();
 		this.listaItem = new ArrayList<Item>();
+
 	}
 //FUNÇOES DO JOGO////////////////////////////////
 	private void obterItem(Item i) {//Adiciona um item ao final da lista
 		this.listaItem.add(i);
 	}
-	private void usarItem(Item i) {
+	public void usarItem(Item i) {
 		i.efeito(this);
 		listaItem.remove(i);//deleta o PRIMEIRO item da lista que possui o mesmo nome do parametro		
 	}	
 
-	protected void atacar(Monstro m) {
+	public void atacar(Monstro m) {
 		m.setVida(m.getVida()-this.forca);
 	}
 	public abstract void melhorarPoder();//LevelUp simplificado

@@ -8,6 +8,7 @@ import com.projeto.finaru.herois.Ladino;
 import com.projeto.finaru.herois.Mago;
 
 public class Sistema {
+	private static final int ArrayList = 0;
 	public ArrayList<Heroi> personagens;
 	public ArrayList<Dungeon> dungeons;
 	protected Scanner leitor;
@@ -35,18 +36,33 @@ public class Sistema {
 		
 		int classe = Integer.parseInt(leitor.nextLine());
 		
+		PocaoVida p = new PocaoVida("poção", "uma poção de vida");
+		ElixirPoder x = new ElixirPoder("elixir", "elixir poder");
+		
+		ArrayList<Item> itemMago = new ArrayList<Item>();
+		itemMago.add(p);
+		itemMago.add(x);
+		itemMago.add(p);
+		itemMago.add(x);
+		ArrayList<Item> itemLadino = new ArrayList<Item>();
+		itemLadino.add(p);
+		itemLadino.add(x);
+		ArrayList<Item> itemGuerreiro = new ArrayList<Item>();
+		itemGuerreiro.add(p);
+		itemGuerreiro.add(x);
+		
 		if(classe == 1) {
-			Heroi heroi = new Guerreiro(nome,50,10,1);
+			Heroi heroi = new Guerreiro(nome,50,10,1, itemGuerreiro);
 			personagens.add(heroi);
 			System.out.println("Guerreiro criado!");
 			System.out.println(" ");
 		}else if(classe == 2) {
-			Heroi heroi = new Mago(nome,20,5,12);
+			Heroi heroi = new Mago(nome,20,5,12, itemMago);
 			personagens.add(heroi);
 			System.out.println("Mago criado!");
 			System.out.println(" ");
 		}else if(classe == 3) {
-			Heroi heroi = new Ladino(nome,30,12,2);
+			Heroi heroi = new Ladino(nome,30,12,2, itemLadino);
 			personagens.add(heroi);
 			System.out.println("Ladino criado!");
 			System.out.println(" ");

@@ -2,7 +2,7 @@ package com.projeto.finaru;
 
 public class ElixirPoder extends Item {
 
-	ElixirPoder(String nome, String descricao) {
+	public ElixirPoder(String nome, String descricao) {
 		super(nome, descricao);
 	}
 

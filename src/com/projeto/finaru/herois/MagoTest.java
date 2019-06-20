@@ -11,7 +11,7 @@ import com.projeto.finaru.Item;
 import com.projeto.finaru.PocaoVida;
 import com.projeto.finaru.monstros.Goblin;
 
-public class LadinoTest {
+public class MagoTest {
 
 	@Test
 	public void test() {
@@ -23,35 +23,33 @@ public class LadinoTest {
 		lista_item.add(p);
 		lista_item.add(x);
 		
-		Ladino l = new Ladino("Davi", 12, 10,  2, lista_item);
+		Mago m = new Mago("Davi", 12, 10,  2, lista_item);
 		Goblin e = new Goblin("monstro", 12, 10, 1);	
 		
 		
 		// Atributos do ladino são positivos?
-		assertTrue(l.getForca() > 0);
-		assertTrue(l.getInteligencia() > 0);
-		assertTrue(l.getVidaMax() > 0);	
+		assertTrue(m.getForca() > 0);
+		assertTrue(m.getInteligencia() > 0);
+		assertTrue(m.getVidaMax() > 0);	
 		
 		// Ataque subtrai a vida do inimigo pelo ataque do ladino?
-		l.atacar(e);
-		assertEquals(e.getVida(),1);
+		m.atacar(e);
+		assertEquals(e.getVida(),2);
 		
 		//Verificar se poção está alterando vida do personagem
-		l.setVidaAtual(1);
-		l.usarItem(p);
-		assertEquals(l.getVidaAtual(), 11);
+		m.setVidaAtual(1);
+		m.usarItem(p);
+		assertEquals(m.getVidaAtual(), 11);
 		
 		//Verificar se elixir está alterando atributos
-		l.usarItem(x);
-		assertEquals(l.getForca(), 12);
-		assertEquals(l.getInteligencia(), 3);
-		
-		//Melhorar poder
-		l.melhorarPoder();
-		assertEquals(l.getForca(), 16);
-		assertEquals(l.getInteligencia(), 4);
-		assertEquals(l.getVidaMax(), 19);
-		
-	}
+		m.usarItem(x);
+		assertEquals(m.getForca(), 11);
+		assertEquals(m.getInteligencia(), 3);
 
+		//Melhorar poder
+		m.melhorarPoder();
+		assertEquals(m.getForca(), 15);
+		assertEquals(m.getInteligencia(), 4);
+		assertEquals(m.getVidaMax(), 19);
+	}
 }

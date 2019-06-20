@@ -7,7 +7,6 @@ public class Goblin extends Monstro {
 
 	public Goblin(String nome, int vida, int ataque, int level) {
 		super(nome, vida, ataque, level);
-		// TODO Auto-generated constructor stub
 		
 	}
 
