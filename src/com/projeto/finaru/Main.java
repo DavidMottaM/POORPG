@@ -2,6 +2,8 @@ package com.projeto.finaru;
 
 import java.util.Scanner;
 
+import com.projeto.finaru.monstros.Goblin;
+
 public class Main {
 	public static void main(String[] args) throws OpcaoInexistenteException {
 		Sistema sistema = new Sistema();
@@ -54,6 +56,8 @@ public class Main {
 		masmorra[2][0] = m;
 		masmorra[3][0] = n;
 		
+		Monstro raimundo = new Goblin("raimundo",10,3,1);
+		masmorra[0][1].monstros.add(raimundo);
 		masmorraAtual = masmorra[atualX][atualY];
 		
 		
