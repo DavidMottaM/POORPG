@@ -1,6 +1,7 @@
 package com.projeto.finaru;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Sala {
 //VARIÁVEIS///////////////////////////////////////
@@ -9,6 +10,8 @@ public class Sala {
 	private boolean paraCima;
 	private boolean paraBaixo;
 
+	Scanner leitor = new Scanner(System.in);
+	
 	public ArrayList<Monstro> monstros;
 	public ArrayList<Item> itens;
 
@@ -16,7 +19,7 @@ public class Sala {
 	private int y;
 	//public Monstro monstros[];
 	public boolean visitada;
-	private String textoEntrada = "";
+	public String textoEntrada = "";
 	
 //CONSTRUTOR/////////////////////////////////////
 	public Sala(boolean paraDireita, boolean paraEsqueda, boolean paraCima, boolean paraBaixo, int x, int y, String t) {
@@ -28,6 +31,8 @@ public class Sala {
 		this.y = y;
 		visitada = false;
 		this.textoEntrada = t;
+		monstros = new ArrayList<Monstro>(); 
+		itens = new ArrayList<Item>(); 
 	}
 //MÉTODOS//////////////////////////////////////////
 	protected  void entrada(Heroi heroi) {
@@ -85,7 +90,86 @@ public class Sala {
 	}
 	
 	public void batalha(Heroi heroi, Monstro monstro) {
+	
+		boolean turno = true;
 		
+		while(turno) {
+			System.out.println("Seu Turno!");
+			System.out.println(" ");
+			System.out.println("////// MENU DE BATALHA //////");
+			System.out.println("1 - Atacar");
+			System.out.println("2 - Usar feitiço");
+			System.out.println("3 - Usar item");
+			
+			int resposta = Integer.parseInt(leitor.nextLine());
+			
+			if(resposta == 1)
+				heroi.atacar(monstro);
+			
+			if(resposta == 2) {
+				
+				if(heroi.lista_feitico.size() == 0) {
+					System.out.println("Voce nao tem nenhum feitiço...");
+					continue;
+				}else {
+					
+					
+					for (int i = 0; i < heroi.lista_feitico.size(); i++) {
+						System.out.println(i + " - " + heroi.lista_feitico.get(i).getNome());
+					}
+					
+					System.out.println(heroi.lista_feitico.size() + " - Voltar");
+					
+					int escolha = Integer.parseInt(leitor.nextLine());
+					
+					if (escolha == heroi.lista_feitico.size())
+						continue;
+					else 
+						heroi.usarFeitico(heroi.lista_feitico.get(escolha), monstro);	
+					
+				}
+				
+				if (resposta == 3) {
+					
+					if(heroi.listaItem.size() == 0) {
+						System.out.println("Voce nao tem nenhum Item...");
+						continue;
+					}else {
+						
+						for (int i = 0; i < heroi.listaItem.size(); i++) {
+							System.out.println(i + " - " + heroi.listaItem.get(i).getNome());
+						}
+						
+						System.out.println(heroi.listaItem.size() + " - Voltar");
+						
+						int escolha = Integer.parseInt(leitor.nextLine());
+						
+						if (escolha == heroi.listaItem.size())
+							continue;
+						else 
+							heroi.listaItem.get(escolha).efeito(heroi);	
+					
+					}					
+				
+				}
+			}
+			
+			if(monstro.getVida() <= 0) {
+				System.out.println("Voce derrotou o monstro!");
+				this.monstros.remove(0);
+				break;
+			}
+			
+			System.out.println("Turno do Monstro!");
+			System.out.println(" ");
+			System.out.println("O monstro ataca!");
+			monstro.atacar(heroi);
+			
+			if(heroi.getVidaAtual() <= 0) {
+				System.out.println("Voce morreu... :(");
+				break;
+			}
+		}		
 	}
 //GETS/////////////////////////////////////////////
 	public boolean getParaDireita() {

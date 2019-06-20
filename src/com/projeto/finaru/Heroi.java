@@ -12,7 +12,8 @@ public abstract class Heroi {
 	protected int vidaAtual;
 	protected int forca;
 	public int inteligencia;
-	protected List<Item> listaItem;
+	public List<Item> listaItem;
+	public List<Feitico> lista_feitico;
 
 //CONSTRUTOR/////////////////////////////////////
 	protected Heroi(String nome,int vidaMax, int forca, int inteligencia, List<Item> listaItem) {
@@ -36,6 +37,9 @@ public abstract class Heroi {
 		m.setVida(m.getVida()-this.forca);
 	}
 	public abstract void melhorarPoder();//LevelUp simplificado
+	public void usarFeitico(Feitico f, Monstro m) {
+		f.efeito(m);
+	}
 //GETS///////////////////////////////////////////
 	public int getX() {
 		return this.x;

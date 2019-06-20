@@ -24,7 +24,7 @@ public class LadinoTest {
 		lista_item.add(x);
 		
 		Ladino l = new Ladino("Davi", 12, 10,  2, lista_item);
-		Goblin e = new Goblin("monstro", 12, 10);	
+		Goblin e = new Goblin("monstro", 12, 10, 1);	
 		
 		
 		// Atributos do ladino são positivos?

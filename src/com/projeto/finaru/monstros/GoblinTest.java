@@ -16,7 +16,7 @@ public class GoblinTest {
 		ArrayList<Item> lista_item = new ArrayList<Item>();
 		
 		Guerreiro g = new Guerreiro("Julia", 12, 10,  2, lista_item);
-		Goblin goblin = new Goblin("monstro", 12, 10);	
+		Goblin goblin = new Goblin("monstro", 12, 10, 1);	
 		
 		//Verificar se é iniciado com vida é maior que zero
 		assertTrue(goblin.getVida() > 0);

@@ -27,7 +27,7 @@ public class GuerreiroTest {
 		lista_item.add(x);
 		
 		Guerreiro g = new Guerreiro("Julia", 12, 10,  2, lista_item);
-		Goblin e = new Goblin("monstro", 12, 10);	
+		Goblin e = new Goblin("monstro", 12, 10, 1);	
 		
 		
 		// Atributos do guerreiro são positivos?

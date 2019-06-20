@@ -13,7 +13,6 @@ public class Mago extends Heroi{
 	
 	public Mago(String nome, int vidaMax, int forca, int inteligencia, List<Item> listaItem) {
 		super(nome, vidaMax, forca, inteligencia, listaItem);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -23,11 +22,6 @@ public class Mago extends Heroi{
 		this.inteligencia += 1;	
 		this.espacosMagia += 3;
 	}
-	
-	private void usarFeitico(Feitico f, Monstro m) {
-		f.efeito(m);
-	}
-
 
 	
 }
