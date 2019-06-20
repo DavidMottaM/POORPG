@@ -1,5 +1,6 @@
 package com.projeto.finaru;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Heroi {
@@ -22,6 +23,8 @@ public abstract class Heroi {
 		this.forca = forca;
 		this.inteligencia = inteligencia;
 		this.level = 0;
+		this.lista_feitico = new ArrayList<Feitico>();
+		this.listaItem = new ArrayList<Item>();
 	}
 //FUNÇOES DO JOGO////////////////////////////////
 	private void obterItem(Item i) {//Adiciona um item ao final da lista
@@ -37,7 +40,7 @@ public abstract class Heroi {
 	}
 	public abstract void melhorarPoder();//LevelUp simplificado
 	public void usarFeitico(Feitico f, Monstro m) {
-		f.efeito(m);
+		f.efeito(this,m);
 	}
 //GETS///////////////////////////////////////////
 	public int getX() {

@@ -12,7 +12,7 @@ public abstract class Feitico {
 		this.frase = frase;
 	}
 //FUNÇÕES DO JOGO////////////////////////////////////////////
-	public abstract void efeito(Monstro m);
+	public abstract void efeito(Heroi h,Monstro m);
 //GETS///////////////////////////////////////////////////////
 	public String getNome() {
 		return this.nome;
