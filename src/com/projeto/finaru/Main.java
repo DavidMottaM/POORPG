@@ -78,85 +78,87 @@ public class Main {
 			System.out.println(" ");
 			
 			opcao = Integer.parseInt(leitor.nextLine());
-			
-			if (opcao == 1) {
+			switch(opcao) {
+				case 1:
+					System.out.println("-Voce escolheu a opcao 1");
+					sistema.criarPersonagem();
+					break;
 				
-				System.out.println("-Voce escolheu a opcao 1");
-				sistema.criarPersonagem();
-			}
-			
-			if (opcao == 2) {
-				
-				System.out.println("-Voce escolheu a opcao 2");
-				System.out.println(" ");
-				System.out.println("Hora de escolher seu personagem!");
-				
-				personagem = sistema.escolherPersonagem();
-				
-				System.out.println(" ");
-				System.out.println("Hora de escolher a Masmorra!");
-				
-				dungeon = sistema.escolherDungeon();
-				
-				System.out.println(" ");
-				System.out.println("Deseja Iniciar a Masmorra? Essa e sua ultima chance de retornar!");
-				System.out.println(" ");
-				System.out.println("1 - SIM");
-				System.out.println("2 - NAO");
-				
-				int resposta = Integer.parseInt(leitor.nextLine());
-				
-				if (resposta == 1) {
-					System.out.println("iniciar");
+				case 2:
+					System.out.println("-Voce escolheu a opcao 2");
+					System.out.println(" ");
+					System.out.println("Hora de escolher seu personagem!");
 					
-					///////////Gameloop --> O jogo ocorre Aqui//////////////////////////////////
-					while(true) {
+					personagem = sistema.escolherPersonagem();
+					
+					System.out.println(" ");
+					System.out.println("Hora de escolher a Masmorra!");
+					
+					dungeon = sistema.escolherDungeon();
+					
+					System.out.println(" ");
+					System.out.println("Deseja Iniciar a Masmorra? Essa e sua ultima chance de retornar!");
+					System.out.println(" ");
+					System.out.println("1 - SIM");
+					System.out.println("2 - NAO");
+					
+					int resposta = Integer.parseInt(leitor.nextLine());
+					
+					if (resposta == 1) {
+						System.out.println("iniciar");
 						
-						masmorraAtual.mostrarOpcoes();
-						
-						opcaoDirecao = Integer.parseInt(leitor.nextLine());
-
-						switch(opcaoDirecao) {
-							case 1:
-								atualY++;
-							break;
-							case 2:
-								atualY--;
-							break;
-							case 3:
-								atualX--;
-							break;
-							case 4:
-								atualX++;
-							break;
-							default:
-								System.out.println("Opção Invalida");
+						///////////Gameloop --> O jogo ocorre Aqui//////////////////////////////////
+						while(true) {
 							
-						}
-						if(masmorra[atualX][atualY] != null) {
-							masmorraAtual = masmorra[atualX][atualY];
-							antigoX = atualX;
-							antigoY = atualY;
-						}
-						else {
-							System.out.println("Opção Invalida");
-							atualX = antigoX;
-							atualY = antigoY;
-						}
+							masmorraAtual.mostrarOpcoes();
+							
+							opcaoDirecao = Integer.parseInt(leitor.nextLine());
 
+							switch(opcaoDirecao) {
+								case 1:
+									atualY++;
+								break;
+								case 2:
+									atualY--;
+								break;
+								case 3:
+									atualX--;
+								break;
+								case 4:
+									atualX++;
+								break;
+								default:
+									System.out.println("Opção Invalida");
+								
+							}
+							if(masmorra[atualX][atualY] != null) {
+								masmorraAtual = masmorra[atualX][atualY];
+								antigoX = atualX;
+								antigoY = atualY;
+							}
+							else {
+								System.out.println("Opção Invalida");
+								atualX = antigoX;
+								atualY = antigoY;
+							}
+
+							
+							masmorraAtual = masmorra[atualX][atualY];
+							masmorraAtual.entrada(personagem);
+						}
 						
-						masmorraAtual = masmorra[atualX][atualY];
-						masmorraAtual.entrada(personagem);
 					}
+					else
+						continue;
 					
-				}
-				else
-					continue;
-			}
-			if (opcao == 3) {
+				case 3:
+					System.out.println("-Voce escolheu a opcao 3");
+					sair = true;
+					break;
 				
-				System.out.println("-Voce escolheu a opcao 3");
-				sair = true;
+				default:
+					System.out.println("Opção Invalida");	
+					break;
 			}
 		}
 	}
