@@ -45,19 +45,19 @@ public class GuerreiroTest {
 		//Verificar se poção está alterando vida do personagem
 		g.setVidaAtual(1);
 		g.usarItem(p);
-		assertEquals(g.getVidaAtual(), 11);
+		assertEquals(g.getVidaAtual(), 12);
 		
 		//Verificar se elixir está alterando atributos
 		g.usarItem(x);
-		assertEquals(g.getForca(), 11);
-		assertEquals(g.getInteligencia(), 3);
+		assertEquals(g.getForca(), 15);
+		assertEquals(g.getInteligencia(), 7);
 		
 		//Melhorar poder
 		g.melhorarPoder();
-		assertEquals(g.getForca(), 14);
-		assertEquals(g.getInteligencia(), 4);
+		assertEquals(g.getForca(), 21);
+		assertEquals(g.getInteligencia(), 8);
 		assertEquals(g.getVidaMax(), 24);
-		assertEquals(g.getArmadura(), 2);
+		assertEquals(g.getArmadura(), 4);
 		
 	}
 

@@ -8,8 +8,19 @@ public class Cura extends Feitico {
 
 	@Override
 	public void efeito(Heroi h, Monstro m) {
-		// TODO Auto-generated method stub
-		h.setVidaAtual(h.getVidaAtual()+h.getInteligencia());
+		System.out.println(this.frase);
+		
+		int cura = h.getInteligencia()+7;
+		if(h.getVidaAtual() + cura > h.getVidaMax()) {
+							//Se a cura deixaria o heroi com mais vida que a
+							//máxima, ele ficaria com a vida maxima ao invés
+			h.setVidaAtual(h.getVidaMax());
+		}
+		else {
+			h.setVidaAtual(h.getVidaAtual() + cura);
+		}
+		
+		System.out.println("Voce curou " + cura + " de vida");
 	}
 
 

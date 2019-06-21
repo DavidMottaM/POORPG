@@ -8,7 +8,10 @@ public class BolaFogo extends Feitico {
 
 	@Override
 	public void efeito(Heroi h, Monstro m) {
-		m.setVida(m.getVida() - (7 + h.getInteligencia()));
+		System.out.println(this.frase);
+		m.setVida(m.getVida() - (5 + h.getInteligencia()));
+		
+		System.out.println("Voce causou "+(5 + h.getInteligencia())+" de dano");
 	}
 
 

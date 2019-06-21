@@ -17,10 +17,11 @@ public class Ladino extends Heroi{
 
 	@Override
 	public void melhorarPoder() {
-		this.vidaMax += 7;
-		this.forca += 4;
+		this.setLevel(this.getLevel()+1);
+		this.vidaMax += 3;
+		this.forca += 8;
 		this.inteligencia += 1;	
-		this.chanceCritico += 3;
+		this.chanceCritico += 5;
 	}
 	
 	//para professora: a gente quer fazer uma sobrecarga

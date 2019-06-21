@@ -39,17 +39,17 @@ public class MagoTest {
 		//Verificar se poção está alterando vida do personagem
 		m.setVidaAtual(1);
 		m.usarItem(p);
-		assertEquals(m.getVidaAtual(), 11);
+		assertEquals(m.getVidaAtual(), 12);
 		
 		//Verificar se elixir está alterando atributos
 		m.usarItem(x);
-		assertEquals(m.getForca(), 11);
-		assertEquals(m.getInteligencia(), 3);
+		assertEquals(m.getForca(), 15);
+		assertEquals(m.getInteligencia(), 7);
 
 		//Melhorar poder
 		m.melhorarPoder();
-		assertEquals(m.getForca(), 15);
-		assertEquals(m.getInteligencia(), 4);
-		assertEquals(m.getVidaMax(), 19);
+		assertEquals(m.getForca(), 16);
+		assertEquals(m.getInteligencia(), 14);
+		assertEquals(m.getVidaMax(), 17);
 	}
 }

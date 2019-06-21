@@ -8,7 +8,7 @@ public class PocaoVida extends Item {
 
 	@Override
 	public void efeito(Heroi h) {//Função de cura da poção
-		int cura =10;
+		int cura =20;
 		if(h.getVidaAtual() + cura > h.getVidaMax()) {
 							//Se a cura deixaria o heroi com mais vida que a
 							//máxima, ele ficaria com a vida maxima ao invés
@@ -17,6 +17,8 @@ public class PocaoVida extends Item {
 		else {
 			h.setVidaAtual(h.getVidaAtual() + cura);
 		}
+		
+		System.out.println("Voce curou " + cura + " de vida");
 	}
 
 }

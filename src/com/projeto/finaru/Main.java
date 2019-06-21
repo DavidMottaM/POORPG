@@ -56,8 +56,30 @@ public class Main {
 		masmorra[2][0] = m;
 		masmorra[3][0] = n;
 		
-		Monstro raimundo = new Goblin("raimundo",10,3,1);
-		masmorra[0][1].monstros.add(raimundo);
+		//Monstros
+		Monstro goblinn = new Goblin("Goblin Minerador",10,3,1);
+		Monstro gobluu = new Goblin("Goblin Minerador 2",10,3,1);
+		Monstro mageGobluu = new Goblin("Globlun Mago",20,4,2);
+		Monstro gobluSpartax =new Goblin("Goblin Pistola",20,5,2);
+		Monstro gobluusupremo = new Goblin("Goblin Guardião Bombado",45,7,3);
+		Monstro gobluuGuardiao = new Goblin("Goblin Guardião Depilado",45,7,3);
+		Monstro SGFAI = new Goblin("Super Goblin Final Arco-Iris",45, 14, 4);
+		//itens
+		Item potion = new ElixirPoder("Poção do peteleco forte","Deixa o seu peteleco mais forte. Mais 3 de força e inteligencia");
+		Item potion2 = new PocaoVida("Poção: Dormida gostosa","Você sente como se tivesse acabado de acordar do coxilo da tarde, recupera +10 vida");
+		Item potion3 = new PocaoVida("Poção de Vida generica","Você sabe o que uma poção de vida faz, +10 de vida");
+		
+		masmorra[0][1].monstros.add(goblinn); //b
+		masmorra[1][0].monstros.add(gobluu);//l
+		masmorra[3][0].monstros.add(mageGobluu);//n
+		masmorra[1][2].monstros.add(gobluSpartax);//d
+		masmorra[3][2].monstros.add(gobluusupremo);//f
+		masmorra[2][3].monstros.add(gobluuGuardiao);//h
+		masmorra[1][3].monstros.add(SGFAI);//i
+		
+		masmorra[2][2].itens.add(potion);//e
+		masmorra[3][3].itens.add(potion2);//g
+		masmorra[3][1].itens.add(potion3);//k
 		masmorraAtual = masmorra[atualX][atualY];
 		
 		
@@ -131,6 +153,15 @@ public class Main {
 									System.out.println("Opção Invalida");
 								
 							}
+							
+							if(atualX == 0 && atualY == 3) {
+								System.out.println("De alguma forma, você conseguiu terminar uma dungeon extremamente desbalanceada e quebrada cheia de monstros totalmente abusivos");
+								System.out.println("Olha, parabens... Não sei se você é muito bom ou apenas extremamente sortudo");
+								System.out.println(" ");
+								System.out.println("////// FIM DE JOGO //////");
+								System.exit(0);
+							}
+							
 							if(masmorra[atualX][atualY] != null) {
 								masmorraAtual = masmorra[atualX][atualY];
 								antigoX = atualX;

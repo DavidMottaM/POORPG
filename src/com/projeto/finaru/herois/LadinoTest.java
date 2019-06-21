@@ -39,18 +39,18 @@ public class LadinoTest {
 		//Verificar se poção está alterando vida do personagem
 		l.setVidaAtual(1);
 		l.usarItem(p);
-		assertEquals(l.getVidaAtual(), 11);
+		assertEquals(l.getVidaAtual(), 12);
 		
 		//Verificar se elixir está alterando atributos
 		l.usarItem(x);
-		assertEquals(l.getForca(), 12);
-		assertEquals(l.getInteligencia(), 3);
+		assertEquals(l.getForca(), 16);
+		assertEquals(l.getInteligencia(), 7);
 		
 		//Melhorar poder
 		l.melhorarPoder();
-		assertEquals(l.getForca(), 16);
-		assertEquals(l.getInteligencia(), 4);
-		assertEquals(l.getVidaMax(), 19);
+		assertEquals(l.getForca(), 24);
+		assertEquals(l.getInteligencia(), 8);
+		assertEquals(l.getVidaMax(), 15);
 		
 	}
 

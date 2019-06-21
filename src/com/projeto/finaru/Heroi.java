@@ -54,7 +54,7 @@ public abstract class Heroi {
 		return this.nome;
 	}
 	public int getLevel() {
-		return this.x;
+		return this.level;
 	}
 	public int getVidaMax() {
 		return this.vidaMax;

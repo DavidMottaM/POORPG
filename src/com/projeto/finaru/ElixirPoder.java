@@ -9,8 +9,10 @@ public class ElixirPoder extends Item {
 	@Override
 	public void efeito(Heroi h) {//Função de elixir de poder
 		
-		h.setForca(h.getForca() + 1);
-		h.setInteligencia(h.getInteligencia() + 1);
+		h.setForca(h.getForca() + 5);
+		h.setInteligencia(h.getInteligencia() + 5);
+		
+		System.out.println("Dano aumentado em 5 pontos");
 	}
 
 }

@@ -14,21 +14,22 @@ public class Mago extends Heroi{
 
 		
 
-	List<Feitico> lista_feitico;
+	
 	
 	public Mago(String nome, int vidaMax, int forca, int inteligencia, List<Item> listaItem) {
 		super(nome, vidaMax, forca, inteligencia, listaItem);
-		this.lista_feitico.add(new BolaFogo("Bola de Fogo", "Dispara uma bola de fogo que dá dano","Voce disparou uma bola de fogo!"));
+		this.lista_feitico.add(new BolaFogo("Bola de Fogo", "Dispara uma bola de fogo que dá dano","AAAAAAAAAHHH BOOOLA DE FOOGO!!"));
 		this.lista_feitico.add(new Cura("Cura", "Cura","Curou toda"));
 
 	}
 
 	@Override
 	public void melhorarPoder() {
-		this.vidaMax += 7;
-		this.forca += 4;
-		this.inteligencia += 1;	
-		this.espacosMagia += 3;
+		this.setLevel(this.getLevel()+1);
+		this.vidaMax += 5;
+		this.forca += 1;
+		this.inteligencia += 7;	
+		this.espacosMagia += 2;
 	}
 
 	

@@ -18,10 +18,11 @@ public class Guerreiro extends Heroi {
 
 	@Override
 	public void melhorarPoder() {
+		this.setLevel(this.getLevel()+1);
 		this.vidaMax += 12;
-		this.forca += 3;
+		this.forca += 6;
 		this.inteligencia += 1;	
-		this.armadura += 1;
+		this.armadura += 3;
 	}
 	
 	public int getArmadura() {

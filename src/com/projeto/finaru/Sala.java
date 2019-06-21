@@ -43,12 +43,13 @@ public class Sala {
 			System.out.println("Voce achou um item!");
 			System.out.println(itens.get(0).getNome() + " foi adicionado no seu inventario...");
 			heroi.listaItem.add(itens.get(0));
+			this.itens.remove(0);
 			
 		}
 		
 		if (monstros.size() > 0) {
 			System.out.println("Um Monstro aparece!");
-			System.out.println("Goblin de nível " + monstros.get(0).getLevel());
+			System.out.println(monstros.get(0).getNome());
 			this.batalha(heroi, monstros.get(0));
 			
 		}
@@ -65,8 +66,6 @@ public class Sala {
 	public void mostrarOpcoes() {
 		if(this.paraCima == true) {
 			System.out.println("1 - Ir para cima");
-		} else {
-			System.out.println("Opção invalida");
 		}
 		
 		if(this.paraBaixo) {
@@ -103,15 +102,17 @@ public class Sala {
 			
 			int resposta = Integer.parseInt(leitor.nextLine());
 			
-			if(resposta == 1)
+			if(resposta == 1) {
 				heroi.atacar(monstro);
-			
-			if(resposta == 2) {
+				System.out.println("Você inflingiu "+ heroi.getForca()+ " de dano");
+			}
+			else if(resposta == 2) {
 				
 				if(heroi.lista_feitico.size() == 0) {
 					System.out.println("Voce nao tem nenhum feitiço...");
 					continue;
-				}else {
+				}
+				else {
 					
 					
 					for (int i = 0; i < heroi.lista_feitico.size(); i++) {
@@ -125,11 +126,12 @@ public class Sala {
 					if (escolha == heroi.lista_feitico.size())
 						continue;
 					else 
-						heroi.usarFeitico(heroi.lista_feitico.get(escolha), monstro);	
-					
-				}
+						heroi.usarFeitico(heroi.lista_feitico.get(escolha), monstro);
+						
+					}
+			    }
 				
-				if (resposta == 3) {
+				else if(resposta == 3) {
 					
 					if(heroi.listaItem.size() == 0) {
 						System.out.println("Voce nao tem nenhum Item...");
@@ -152,10 +154,16 @@ public class Sala {
 					}					
 				
 				}
-			}
+				else {
+					System.out.println("Resposta invalida");
+					
+				}
+			
 			
 			if(monstro.getVida() <= 0) {
 				System.out.println("Voce derrotou o monstro!");
+				heroi.melhorarPoder();
+				System.out.println("Voce passou para o Nível "+heroi.getLevel()+"!");
 				this.monstros.remove(0);
 				break;
 			}
@@ -165,10 +173,16 @@ public class Sala {
 			System.out.println("O monstro ataca!");
 			monstro.atacar(heroi);
 			
+			System.out.println("Voce recebeu " + (monstro.getAtaque()+monstro.getLevel())+" de dano");
+			
 			if(heroi.getVidaAtual() <= 0) {
 				System.out.println("Voce morreu... :(");
-				break;
+				System.out.println("da proxima vez tente usar mais poçoes de vida...");
+				System.out.println(" ");
+				System.out.println("////// FIM DE JOGO //////");
+				System.exit(0);
 			}
+			
 		}		
 	}
 //GETS/////////////////////////////////////////////
